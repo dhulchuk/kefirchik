@@ -22,6 +22,8 @@ def audioRecorderCallback(fname):
         print(words)
         if 'exit' in words:
             exit_handler(None, None)
+        if 'song' in words or 'music' in words:
+            activities.play_song()
 
     except sr.UnknownValueError:
         print("Google Speech Recognition could not understand audio")
