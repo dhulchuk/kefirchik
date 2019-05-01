@@ -2,3 +2,4 @@ SpeechRecognition
 pyaudio
 gmusicapi
 python-vlc
+requests

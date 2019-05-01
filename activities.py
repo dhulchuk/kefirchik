@@ -1,5 +1,10 @@
+import datetime
+
 import vlc
+import webbrowser
 from gmusicapi import Mobileclient
+
+from speak import say
 
 
 def play_song():
@@ -17,3 +22,15 @@ def play_song():
     url = api.get_stream_url(track_id)
     p = vlc.MediaPlayer(url)
     p.play()
+
+
+def open_website(domain):
+    print(domain)
+    url = 'https://' + domain
+    webbrowser.open(url)
+    print('The website you have requested has been opened for you Sir.')
+
+
+def time():
+    now = datetime.datetime.now()
+    say('Current time is %d hours %d minutes' % (now.hour, now.minute))
